@@ -23,5 +23,12 @@ if (userAge < 18) {
     finalPrice = travelFullPrice - (travelFullPrice * seniorDiscount);
     //console.log(finalPrice);
 } 
+
 //L'output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo).
-document.getElementById("ticket_price").innerHTML = `Il prezzo del tuo biglietto è ${finalPrice.toFixed(2)} €`;
+
+if(isNaN(finalPrice)){
+    alert("Non hai inserito correttamente i km da percorrere! Devi inserire un valore numerico.");
+    document.getElementById("ticket_price").innerHTML = `Oops c'è stato un problema!`;
+} else {
+    document.getElementById("ticket_price").innerHTML = `Il prezzo del tuo biglietto è ${finalPrice.toFixed(2)} €`;
+}
